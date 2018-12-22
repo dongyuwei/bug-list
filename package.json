@@ -1,0 +1,15 @@
+{
+  "name": "bug-list",
+  "version": "1.0.0",
+  "description": "bug list",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx http-server "
+  },
+  "keywords": [],
+  "author": "Dong Yuwei",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

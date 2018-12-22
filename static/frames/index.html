@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <script src="./amplify.core.js"></script>
+  <button onclick="reloadIframe()">reload iframe</button>
+  <iframe src="./frame.html" frameborder="0"></iframe>
+  <script>
+   function reloadIframe() {
+       $("iframe").attr("src", `./frame.html?v=${Date.now()}`);
+   }
+  </script>
+</body>
+</html>
