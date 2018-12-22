@@ -7,28 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
   <script src="./amplify.core.js"></script>
 
   <button onclick="test()">trigger event</button>
-  <div id="count"></div>
+  <div id="content"></div>
   <script>
       function test () {
-        amplify.publish("test-event")
-        top.amplify.publish("test-event")
+        top.amplify.publish("test-topic");
       }
 
       function callback() {
-          $("#count").html("test")
-        //   debugger;
-          console.log("event triggered")
+          alert(location.href);
+          document.getElementById("content").innerText = location.href;
+          console.log("event triggered");
       }
       
-      amplify.subscribe("test-event", callback)
-      top.amplify.subscribe("test-event", callback)
+      top.amplify.subscribe("test-topic", callback);
   </script>
 </body>
 </html>

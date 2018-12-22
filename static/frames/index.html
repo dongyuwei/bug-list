@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        #iframe {
+            width: 800px;
+            height: 200px;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-  <script src="./amplify.core.js"></script>
-  <button onclick="reloadIframe()">reload iframe</button>
-  <iframe src="./frame.html" frameborder="0"></iframe>
-  <script>
-   function reloadIframe() {
-       $("iframe").attr("src", `./frame.html?v=${Date.now()}`);
-   }
-  </script>
+    <script src="./amplify.core.js"></script>
+    <script>
+    function reloadIframe() {
+        document.getElementById("iframe").src = "./frame.html?v=" + Date.now();
+    }
+    </script>
+
+    <button onclick="reloadIframe()">reload iframe</button>
+    chrome 71 会执行被销毁的事件，firefox65 和 IE11 会报错。
+    <iframe id="iframe" src="./frame.html" frameborder="0" width="800px"></iframe>
 </body>
 </html>
